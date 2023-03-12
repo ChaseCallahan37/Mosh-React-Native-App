@@ -3,7 +3,12 @@ import colors from "./colors";
 
 const { primary, secondary, black, white, red, blue } = colors;
 
-const styles = StyleSheet.create({
+const defaultStyles = StyleSheet.create({
+  text: {
+    color: colors.dark,
+    fontSize: 18,
+    fontFamily: Platform.OS === "android" ? "Roboto" : "Avenir",
+  },
   appText: {
     color: black,
     ...Platform.select({
@@ -102,4 +107,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default styles;
+export default defaultStyles;
