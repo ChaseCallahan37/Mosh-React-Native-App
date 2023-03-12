@@ -1,9 +1,22 @@
-import { StyleSheet } from "react-native";
+import { Platform, StyleSheet } from "react-native";
 import colors from "./colors";
 
-const { primary, secondary, black } = colors;
+const { primary, secondary, black, white, red, blue } = colors;
 
 const styles = StyleSheet.create({
+  appText: {
+    color: black,
+    ...Platform.select({
+      ios: {
+        fontSize: 20,
+        fontFamily: "Avenir",
+      },
+      android: {
+        fontSize: 18,
+        fontFamily: "Roboto",
+      },
+    }),
+  },
   background: {
     flex: 1,
     justifyContent: "flex-end",
@@ -17,19 +30,26 @@ const styles = StyleSheet.create({
     borderColor: "royalblue",
     borderRadius: 50,
   },
+  btn: {
+    width: "95%",
+    color: white,
+    borderRadius: 40,
+    height: 70,
+    marginBottom: 25,
+  },
   closeIcon: {
     backgroundColor: primary,
     top: 40,
     left: 30,
   },
+  center: {
+    justifyContent: "center",
+    alignItems: "center",
+  },
   container: {
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-  },
-  btn: {
-    width: "100%",
-    height: 70,
   },
   deleteIcon: {
     backgroundColor: secondary,
@@ -57,7 +77,16 @@ const styles = StyleSheet.create({
     alignItems: "center",
     top: 70,
   },
+  primaryBtn: {
+    backgroundColor: primary,
+  },
   registerButton: {
+    backgroundColor: secondary,
+  },
+  roundedBorder: {
+    borderRadius: 30,
+  },
+  secondaryBtn: {
     backgroundColor: secondary,
   },
   shadow: {

@@ -1,21 +1,30 @@
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, TouchableHighlight, View } from "react-native";
 import ViewImageScreen from "./src/screens/ViewImageScreen";
 import WelcomeScreen from "./src/screens/WelcomeScreen";
-import styles from "./src/styles/styles";
-
+import AppText from "./src/components/AppText";
+import globalStyles from "./src/styles/styles";
+import MailIcon from "./src/components/MailIcon";
+import AppButton from "./src/components/AppButton";
+import Card from "./src/components/Card";
+import ListingDetailScreen from "./src/screens/ListingDetailScreen";
+import MessagesScreen from "./src/screens/MessagesScreen";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
+import AccountScreen from "./src/screens/AccountScreen";
+import ListingsScreen from "./src/screens/ListingsScreen";
 export default function App() {
   return (
-    <View style={styles.container}>
-      <View style={{ ...styles.shadow, ...styles.blueCircle }}></View>
-      <View
-        style={{
-          width: 100,
-          height: 100,
-          backgroundColor: "dodgerblue",
-          ...styles.shadow,
-        }}
-      ></View>
-    </View>
+    <GestureHandlerRootView>
+      <ListingsScreen />
+    </GestureHandlerRootView>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+});
